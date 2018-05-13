@@ -1,20 +1,19 @@
 {
   "name": "build-react-app-tchapi",
   "version": "1.0.0",
-  "description": "Ceci est un template buildable en ract proposant une base adapté à mes besoins",
+  "description": "Ceci est un template buildable en react proposant une base adapté à mes besoins",
   "main": "index.js",
+  "author": "Gérome Lacaux",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
+  	"dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack"
-  },
-  "author": "",
+	},
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.3",
-    "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
     "postcss-loader": "^2.1.1",
