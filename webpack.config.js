@@ -1,46 +1,32 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-//extension permettant de trouvé le chemin absolue (c:/user...)
-const path = require('path');
-
-const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
+const webpack = require('webpack');
 
 module.exports = {
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, './assets'),
-        loader: require.resolve("babel-loader"),
-        options: {
-          // This is a feature of `babel-loader` for Webpack (not Babel itself).
-          // It enables caching results in ./node_modules/.cache/babel-loader/
-          // directory for faster rebuilds.
-          cacheDirectory: true,
-          plugins: ["react-hot-loader/babel"]
-        }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
-        ]
+        exclude: /node_modules/,
+        use: ['babel-loader']
       }
     ]
   },
-  plugins: [htmlWebpackPlugin]
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  }
 };
