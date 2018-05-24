@@ -1,8 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import App from "./containers/App";
-import { hot } from 'react-hot-loader'
+import { AppContainer } from "react-hot-loader";
+import { BrowserRouter } from "react-router-dom";
 
-const test = ReactDOM.render(<App />, document.getElementById("root"));
+const renderApp = Component =>
+  render(
+    <BrowserRouter>
+      <AppContainer>
+        <Component />
+      </AppContainer>
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
 
-export default hot(module)(test)
+renderApp(App);
+
+if (module.hot) {
+  module.hot.accept("./containers/App", () => {
+    const NewApp = require("./containers/App").default;
+    renderApp(NewApp);
+  });
+}

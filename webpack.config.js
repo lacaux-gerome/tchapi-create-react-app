@@ -2,10 +2,10 @@
 const path = require("path");
 const webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["react-hot-loader/patch", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "index_bundle.js"
