@@ -11,7 +11,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
-      }
+      },
     ]
   },
   resolve: {
@@ -26,7 +26,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './src',
     hot: true
   }
 };
