@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./containers/App";
+import { hot } from 'react-hot-loader'
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const test = ReactDOM.render(<App />, document.getElementById("root"));
 
-module.hot.accept();
+export default hot(module)(test)

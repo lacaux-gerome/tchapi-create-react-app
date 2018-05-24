@@ -6,7 +6,7 @@
   "author": "Gérome Lacaux",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "start": "webpack-dev-server --mode development --hot"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -14,6 +14,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.2.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4",
