@@ -9,16 +9,16 @@ const Header = styled.div`
   height: 100px;
   width: 100%;
   text-align: center;
-  background-color: white;
+  background-color: red;
 `;
 
 export default class header extends React.Component {
   render() {
     return (
-      <div>
+      <Header>
         THIS IS THE HEADER : 
         <Nav/>
-      </div>
+      </Header>
     );
   }
 }
