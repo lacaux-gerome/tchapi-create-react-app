@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./button";
 import Nav from "./nav";
 
 // Create a Title component that'll render an <h1> tag with some styles

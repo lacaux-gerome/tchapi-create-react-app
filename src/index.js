@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import App from "./containers/App";
 import { AppContainer } from "react-hot-loader";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 
 const renderApp = Component =>
   render(
@@ -11,7 +11,7 @@ const renderApp = Component =>
         <Component />
       </AppContainer>
     </BrowserRouter>,
-    document.getElementById("root")
+    document.getElementById('root')
   );
 
 renderApp(App);

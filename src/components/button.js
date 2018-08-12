@@ -6,7 +6,7 @@ export default class Button extends React.Component {
         super(props);
         this.increment = this.increment.bind(this);
         this.state = {
-            counter: 0
+            counter: 0,
         }
     }
 
